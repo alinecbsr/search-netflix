@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className='App'>
-      <h1>Search Netflix</h1>
-    </div>
-  );
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Footer from './components/Footer';
+
+import { Switch, Route } from 'react-router-dom';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
