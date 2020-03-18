@@ -25,9 +25,21 @@ class MovieProvider extends Component {
       moviesResult: [] /* pesquisar e ver resultados */,
       modalOpen: false /* modal é fechado no início, depois que o estado for verdadeiro, o componente mostrará */,
       visible: 10 /* número de filmes que serão visíveis primeiro na página inicial */,
-      pageRefreshed: false /* estado para entender se a página é atualizada */
+      pageRefreshed: false /* estado para entender se a página é atualizada */,
+      scrollTop: 0
     };
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.changeBackground);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.changeBackground);
+  }
+  /* identifica a posição do scroll e atribui a variável Sc */
+  changeBackground = e => {
+    this.setState({ scrollTop: document.documentElement.scrollTop });
+  };
 
   cleanState = () => {
     this.setState({
@@ -321,7 +333,8 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_KEY}&language=en-US&
           loadMore: this.loadMore,
           cleanState: this.cleanState,
           clearVisible: this.clearVisible,
-          refreshPage: this.refreshPage
+          refreshPage: this.refreshPage,
+          changeBackground: this.changeBackground
         }}
       >
         {this.props.children}
@@ -333,3 +346,4 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_KEY}&language=en-US&
 const MovieConsumer = MovieContext.Consumer;
 
 export { MovieProvider, MovieConsumer };
+export default MovieContext;

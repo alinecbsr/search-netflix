@@ -17,6 +17,36 @@ class Home extends Component {
         <Top />
         <Now />
         <Coming />
+        <Hero />
+        <Trending />
+        <Popular />
+        <Top />
+        <Now />
+        <Coming />
+        <Hero />
+        <Trending />
+        <Popular />
+        <Top />
+        <Now />
+        <Coming />
+        <Hero />
+        <Trending />
+        <Popular />
+        <Top />
+        <Now />
+        <Coming />
+        <Hero />
+        <Trending />
+        <Popular />
+        <Top />
+        <Now />
+        <Coming />
+        <Hero />
+        <Trending />
+        <Popular />
+        <Top />
+        <Now />
+        <Coming />
       </div>
     );
   }

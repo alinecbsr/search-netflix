@@ -1,7 +1,17 @@
 .main__header {
-  display: flex;
+  position: fixed;
+  width: 100%;
   padding: 0 50px;
-  background-color: #000;
+  background-color: transparent;
+  transition-timing-function: ease-in;
+  transition: all 1s;
+
+  /*   transition-timing-function: ease-in;
+  transition: all 1s; */
+
+  &.black {
+    background-color: #000;
+  }
 }
 
 .navbar {
