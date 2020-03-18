@@ -4,6 +4,8 @@ import { MovieProvider } from './services/context';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 
+import './assets/sass/styles.scss';
+
 ReactDOM.render(
   <MovieProvider>
     <Router>
