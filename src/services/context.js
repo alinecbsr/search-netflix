@@ -60,7 +60,7 @@ class MovieProvider extends Component {
         this.setState({
           trending: apiResponse.results
         });
-        console.log(apiResponse.results);
+        //console.log(apiResponse.results);
       })
       .catch(error => {
         /* console.log(error); */
@@ -150,7 +150,7 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_KEY}&language=en-US&
       )
       .then(response => {
         const apiResponse = response.data;
-        /* console.log(this.state.id); */
+        console.log(this.state.id);
         this.setState(
           {
             details: apiResponse,

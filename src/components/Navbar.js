@@ -7,7 +7,7 @@ import User from '../assets/image/user-icon.svg';
 
 class Navbar extends Component {
   componentDidMount() {
-    console.log('scrollTop', this.context);
+    //console.log('scrollTop', this.context);
   }
   render() {
     return (
