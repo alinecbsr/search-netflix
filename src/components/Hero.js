@@ -35,11 +35,12 @@ class Hero extends Component {
                       <Link to={`${movie.id}`} key={movie.id}>
                         <LazyLoad>
                           <img
+                            className="swiper-image"
                             src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
                             alt={movie.title}
                           />
                         </LazyLoad>
-                        <h1 className="carousel-caption">{movie.title}</h1>
+                        <h1>{movie.title}</h1>
                       </Link>
                     );
                   })}
