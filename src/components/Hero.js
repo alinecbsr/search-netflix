@@ -3,12 +3,14 @@ import MovieContext, { MovieConsumer } from '../services/context';
 import Swiper from 'react-id-swiper';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
+import Play from '../assets/image/play-icon.svg';
+import Add from '../assets/image/plus-icon.svg';
 
 import 'swiper/swiper.scss';
 
 class Hero extends Component {
   componentDidMount() {
-    this.context.getTrending();
+    this.context.getNow();
   }
 
   render() {
@@ -27,20 +29,45 @@ class Hero extends Component {
       <div className=" Hero">
         <MovieConsumer>
           {value => {
-            if (value.trending.length) {
+            if (value.now.length) {
               return (
                 <Swiper {...params}>
-                  {value.trending.map(movie => {
+                  {value.now.map(tvTopRated => {
                     return (
-                      <Link to={`${movie.id}`} key={movie.id}>
+                      <Link to={`${tvTopRated.id}`} key={tvTopRated.id}>
                         <LazyLoad>
                           <img
                             className="swiper-image"
-                            src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`}
-                            alt={movie.title}
+                            src={`https://image.tmdb.org/t/p/w1280${tvTopRated.backdrop_path}`}
+                            alt={tvTopRated.title}
                           />
                         </LazyLoad>
-                        <h1>{movie.title}</h1>
+                        <div className="backdrop">
+                          <h1 className="backdrop__title">
+                            {tvTopRated.title}
+                          </h1>
+                          <p className="backdrop__overview">
+                            {tvTopRated.overview}
+                          </p>
+                          <span>
+                            <button className="backdrop__btnPlay">
+                              <img
+                                src={Play}
+                                className="backdrop__btnPlay-play"
+                                alt="Play"
+                              />
+                              Play
+                            </button>
+                            <button className="backdrop__btnMyList">
+                              <img
+                                src={Add}
+                                className="backdrop__btnMyList-add"
+                                alt="Add"
+                              />
+                              More info
+                            </button>
+                          </span>
+                        </div>
                       </Link>
                     );
                   })}

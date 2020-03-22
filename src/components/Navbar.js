@@ -4,6 +4,7 @@ import Netflix from '../assets/image/netflix-logo.svg';
 import Gift from '../assets/image/gift-icon.svg';
 import Bell from '../assets/image/bell-icon.svg';
 import User from '../assets/image/user-icon.svg';
+import Research from '../components/Search';
 
 class Navbar extends Component {
   componentDidMount() {
@@ -25,14 +26,15 @@ class Navbar extends Component {
                     alt="Logo Netglix"
                   />
                   <ul className="navbar__left--list">
-                    <li className="navbar__left--item">Trending</li>
-                    <li className="navbar__left--item">Popular</li>
-                    <li className="navbar__left--item">Top Rated</li>
-                    <li className="navbar__left--item">Now</li>
-                    <li className="navbar__left--item">Coming</li>
+                    <li className="navbar__left--item">Home</li>
+                    <li className="navbar__left--item">TV Shows</li>
+                    <li className="navbar__left--item">Movies</li>
+                    <li className="navbar__left--item">Latest</li>
+                    <li className="navbar__left--item">My List</li>
                   </ul>
                 </nav>
                 <div className="navbar__right">
+                  <Research />
                   <ul className="navbar__right--list">
                     <li className="navbar__right--item">KIDS</li>
                   </ul>

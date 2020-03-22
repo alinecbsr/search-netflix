@@ -8,6 +8,8 @@ class MovieProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      tvTop: [],
+      tvPopular: [],
       trending: [],
       popular: [],
       now: [],
@@ -48,6 +50,40 @@ class MovieProvider extends Component {
       coming: [],
       top: []
     });
+  };
+
+  getTvTop = () => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/top_rated?api_key=${TMDB_KEY}&language=en-US&page=1`
+      )
+      .then(response => {
+        const apiResponse = response.data;
+        this.setState({
+          tvTop: apiResponse.results
+        });
+        //console.log(apiResponse.results);
+      })
+      .catch(error => {
+        /* console.log(error); */
+      });
+  };
+
+  getTvPopular = () => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/tv/popular?api_key=${TMDB_KEY}&language=en-US&page=1`
+      )
+      .then(response => {
+        const apiResponse = response.data;
+        this.setState({
+          tvPopular: apiResponse.results
+        });
+        //console.log(apiResponse.results);
+      })
+      .catch(error => {
+        /* console.log(error); */
+      });
   };
 
   getTrending = () => {
@@ -318,6 +354,8 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_KEY}&language=en-US&
         //esses métodos poderão ser usados pelo usuário depois de colocá-los aqui
         value={{
           ...this.state,
+          getTvTop: this.getTvTop,
+          getTvPopular: this.getTvPopular,
           getTrending: this.getTrending,
           getPopular: this.getPopular,
           getNow: this.getNow,
