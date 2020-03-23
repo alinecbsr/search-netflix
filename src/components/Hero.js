@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MovieContext, { MovieConsumer } from '../services/context';
 import Swiper from 'react-id-swiper';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import Play from '../assets/image/play-icon.svg';
 import Add from '../assets/image/plus-icon.svg';
@@ -20,7 +20,7 @@ class Hero extends Component {
       spaceBetween: 30,
       centeredSlides: true,
       autoplay: {
-        delay: 2500,
+        delay: 1500,
         disableOnInteraction: false
       }
     };
@@ -34,7 +34,7 @@ class Hero extends Component {
                 <Swiper {...params}>
                   {value.now.map(tvTopRated => {
                     return (
-                      <Link to={`${tvTopRated.id}`} key={tvTopRated.id}>
+                      <div key={tvTopRated.id}>
                         <LazyLoad>
                           <img
                             className="swiper-image"
@@ -68,7 +68,7 @@ class Hero extends Component {
                             </button>
                           </span>
                         </div>
-                      </Link>
+                      </div>
                     );
                   })}
                 </Swiper>

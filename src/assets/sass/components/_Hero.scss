@@ -6,19 +6,19 @@
     width: 100%;
     height: 70rem;
     cursor: initial;
-
     margin-bottom: 0;
 
     .swiper-image {
       width: 100%;
+      height: 70rem;
     }
 
     .backdrop {
       position: relative;
       display: flex;
       flex-direction: column;
-      top: -76em;
-      height: 70rem;
+      top: -80em;
+      height: 80rem;
       background: rgb(1, 0, 9);
       background: linear-gradient(
         90deg,
@@ -38,7 +38,7 @@
         margin-top: 10px;
         margin-bottom: 20px;
         font-size: 16px;
-        width: 70rem;
+        width: 50rem;
         max-width: 120ch;
         height: 3rem;
         white-space: nowrap;

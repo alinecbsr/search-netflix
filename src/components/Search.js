@@ -8,14 +8,14 @@ class Research extends Component {
       <MovieConsumer>
         {value => {
           return (
-            <form inline className="search" /* onSubmit={value.handleSubmit} */>
+            <form className="search" /* onSubmit={value.handleSubmit} */>
               <img
                 src={SearchIcon}
                 className="search__icon"
                 alt="search icon"
               />
               <input
-                /* onChange={value.handleChange} */
+                onChange={value.handleChange}
                 type="text"
                 placeholder="Titles, people, genres"
                 className="search__input"

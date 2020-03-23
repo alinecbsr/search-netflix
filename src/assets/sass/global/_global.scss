@@ -26,10 +26,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100%;
 }
 
 html {
   // this defines what 1rem is --> font root size
   font-size: 62.5%; // 10/16, 1rem = 10px;
+}
+
+.swiper-container {
+  max-width: 100%;
 }

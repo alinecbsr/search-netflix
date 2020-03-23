@@ -1,47 +1,30 @@
 import React, { Component } from 'react';
 
 import Hero from '../components/Hero';
-import Trending from '../components/Trending';
 import Popular from '../components/Popular';
-import Top from '../components/Top';
-import Now from '../components/Now';
-import Coming from '../components/Trending';
+import ModalDetail from '../components/ModalDetail';
+// import Trending from '../components/Trending';
+// import TopRated from '../components/TopRated';
+//import Now from '../components/Now';
+// import Coming from '../components/Coming';
+
+import 'swiper/css/swiper.css';
 
 class Home extends Component {
   render() {
     return (
       <div className="Home">
+        <ModalDetail />
         <Hero />
-        <Trending />
         <Popular />
-        <Top />
-        <Now />
+        {/* <TopRated /> */}
+        {/*<Now />
         <Coming />
         <Trending />
-        <Popular />
-        <Top />
-        <Now />
-        <Coming />
         <Trending />
-        <Popular />
-        <Top />
-        <Now />
-        <Coming />
         <Trending />
-        <Popular />
-        <Top />
-        <Now />
-        <Coming />
         <Trending />
-        <Popular />
-        <Top />
-        <Now />
-        <Coming />
-        <Trending />
-        <Popular />
-        <Top />
-        <Now />
-        <Coming />
+        <Trending /> */}
       </div>
     );
   }

@@ -26,6 +26,8 @@ class MovieProvider extends Component {
       movies: [] /* buscar */,
       moviesResult: [] /* pesquisar e ver resultados */,
       modalOpen: false /* modal é fechado no início, depois que o estado for verdadeiro, o componente mostrará */,
+      modalContent: undefined,
+      modalContentType: 'movie',
       visible: 10 /* número de filmes que serão visíveis primeiro na página inicial */,
       pageRefreshed: false /* estado para entender se a página é atualizada */,
       scrollTop: 0
@@ -288,9 +290,20 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_KEY}&language=en-US&
   };
   /* obtém o valor das entradas */
   handleChange = e => {
+    const { modalOpen, moviesResult } = this.state;
+    const searchTerm = e.target.value;
+    if (searchTerm === '') {
+      this.closeModal();
+      this.clearSearch();
+    }
+
+    if (!modalOpen) {
+      this.openModal(moviesResult, 'search');
+    }
     this.setState(
       {
-        movies: e.target.value
+        movies: searchTerm,
+        modalContentType: 'search'
       },
       () => {
         this.searchMovie();
@@ -305,22 +318,27 @@ https://api.themoviedb.org/3/movie/top_rated?api_key=${TMDB_KEY}&language=en-US&
     e.target.reset();
   };
 
-  openModal = () => {
+  openModal = (content, modalContentType = 'movie') => {
     this.setState({
-      modalOpen: true
+      modalOpen: true,
+      modalContent: content != null ? content : undefined,
+      modalContentType
     });
   };
 
   closeModal = () => {
     this.setState({
-      modalOpen: false
+      modalOpen: false,
+      modalContent: undefined,
+      modalContentType: 'movie'
     });
   };
 
   clearSearch = () => {
     this.setState({
       movies: [],
-      moviesResult: []
+      moviesResult: [],
+      modalContentType: 'movie'
     });
   };
 

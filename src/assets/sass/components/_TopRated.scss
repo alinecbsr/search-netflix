@@ -1,0 +1,23 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  color: #fff;
+
+  &__heading {
+    padding-top: 2rem;
+    padding-left: 5rem;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Hind', sans-serif;
+  }
+
+  &__image {
+    height: 28rem;
+    width: 18rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+}
