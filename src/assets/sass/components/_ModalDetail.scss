@@ -1,6 +1,7 @@
 .modal {
   justify-content: center;
   align-items: center;
+  padding-top: 10rem;
   position: fixed;
   display: none;
   width: 100%;
@@ -15,15 +16,44 @@
 
   &__detail {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 150px;
-    background: #fff;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 450px;
+    background: #000;
+    cursor: initial;
 
-    h1 {
-      color: #000;
+    &-container {
+      display: flex;
+      width: 100%;
+    }
+    &-image {
+      width: 60%;
+      height: 450px;
+      position: relative;
+    }
+
+    &-info {
+      width: 40%;
+      height: 450px;
+      position: absolute;
+      top: 200px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      color: #fff;
+    }
+  }
+  &__search {
+    margin-right: 1rem;
+    flex-wrap: wrap;
+    &-img {
+      max-width: 18rem;
+      max-height: 18rem;
+      background: #000;
+      cursor: pointer;
     }
   }
 }
